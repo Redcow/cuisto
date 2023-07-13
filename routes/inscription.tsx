@@ -5,7 +5,6 @@ import { supabase } from "infrastructure/supabase.ts";
 export const handler: Handlers = 
 {
     async POST(request, context) {
-        console.log(request)
         const url = new URL(request.url);
         const form = await request.formData();
     
@@ -16,9 +15,6 @@ export const handler: Handlers =
           email: email,
           password: password,
         });
-    
-        console.log(user);
-        console.log(session);
     
         if(error) {
           return context.render({failed: true});

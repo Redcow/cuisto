@@ -1,9 +1,10 @@
 import { Head } from "$fresh/runtime.ts";
 import { ComponentChildren } from "preact";
+import { ServerState } from "infrastructure/Types.d.ts";
 
 type Props = {
   children: ComponentChildren;
-  isAllowed: boolean;
+  state: ServerState;
 };
 
 const LoginButton = () => (
@@ -25,6 +26,7 @@ const LogOutButton = () => (
 );
 
 export default function Layout(props: Props) {
+  const isAllowed = !!props.state?.user;
   return (
     <>
       <Head>
@@ -34,7 +36,7 @@ export default function Layout(props: Props) {
       <div>
         <nav>
           <div>
-            {props.isAllowed ? <LogOutButton /> : <LoginButton />}
+            {isAllowed ? <LogOutButton /> : <LoginButton />}
           </div>
         </nav>
 
