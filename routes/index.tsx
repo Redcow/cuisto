@@ -1,26 +1,20 @@
 import { Handlers } from "$fresh/src/server/types.ts";
 import { useSignal } from "@preact/signals";
-import { getCookies } from "$std/http/cookie.ts";
-import Counter from "../islands/Counter.tsx";
-import Layout from "../components/Skeleton/Layout.tsx";
+import Counter from "islands/Counter.tsx";
+import Layout from "components/Skeleton/Layout.tsx";
 import { PageProps } from "$fresh/server.ts";
+import { ServerState } from "infrastructure/Types.d.ts";
 
 export const handler: Handlers = {
-  GET(request, context) {
-    const cookies = getCookies(request.headers);
-
-    return context.render({
-      isAllowed: cookies.auth === "jojo",
-    });
+  GET(_request, context) {
+    return context.render(context.state);
   },
 };
 
-export default function Home(props: PageProps) {
+export default function Home(props: PageProps<ServerState>) {
   const count = useSignal(3);
   return (
-    <Layout
-      isAllowed={props.data.isAllowed}
-    >
+    <Layout state={props.data}>
       <div class="p-4 mx-auto max-w-screen-md">
         <img
           src="/logo.svg"
@@ -37,6 +31,10 @@ export default function Home(props: PageProps) {
           style={{ border: "1px solid black" }}
         >
           créer un compte
+        </a>
+        <br />
+        <a href="/secret">
+          secret path
         </a>
       </div>
     </Layout>

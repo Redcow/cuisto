@@ -3,23 +3,27 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $0 from "./routes/[name].tsx";
-import * as $1 from "./routes/api/joke.ts";
-import * as $2 from "./routes/api/sign-out.ts";
-import * as $3 from "./routes/connexion.tsx";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/inscription.tsx";
-import * as $6 from "./routes/login.tsx";
+import * as $1 from "./routes/_middleware.ts";
+import * as $2 from "./routes/api/joke.ts";
+import * as $3 from "./routes/api/sign-out.ts";
+import * as $4 from "./routes/connexion.tsx";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/inscription.tsx";
+import * as $7 from "./routes/login.tsx";
+import * as $8 from "./routes/secret.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 
 const manifest = {
   routes: {
     "./routes/[name].tsx": $0,
-    "./routes/api/joke.ts": $1,
-    "./routes/api/sign-out.ts": $2,
-    "./routes/connexion.tsx": $3,
-    "./routes/index.tsx": $4,
-    "./routes/inscription.tsx": $5,
-    "./routes/login.tsx": $6,
+    "./routes/_middleware.ts": $1,
+    "./routes/api/joke.ts": $2,
+    "./routes/api/sign-out.ts": $3,
+    "./routes/connexion.tsx": $4,
+    "./routes/index.tsx": $5,
+    "./routes/inscription.tsx": $6,
+    "./routes/login.tsx": $7,
+    "./routes/secret.tsx": $8,
   },
   islands: {
     "./islands/Counter.tsx": $$0,

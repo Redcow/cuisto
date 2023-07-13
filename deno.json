@@ -16,11 +16,14 @@
     "$std/": "https://deno.land/std@0.190.0/",
     "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
     "supabase": "https://esm.sh/@supabase/supabase-js@2.1.0",
+    "jsonwebtoken": "https://esm.sh/jsonwebtoken@9.0.1",
 
     "components/": "./components/",
+    "exceptions/": "./exceptions/",
     "islands/": "./islands/",
     "routes/": "./routes/",
-    "infrastructure/": "./infrastructure/"
+    "infrastructure/": "./infrastructure/",
+    "handlers/": "./handlers/"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
