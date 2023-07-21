@@ -1,28 +1,29 @@
-import { Head } from "$fresh/runtime.ts";
-import { ComponentChildren } from "preact";
-import { ServerState } from "infrastructure/Types.d.ts";
+import { asset, Head } from "$fresh/runtime.ts";
+import { type ComponentChildren } from "preact";
+import { type ServerState } from "infrastructure/Types.d.ts";
+import { Link } from "../Link.tsx";
 
 type Props = {
   children: ComponentChildren;
   state: ServerState;
 };
 
-const LoginButton = () => (
-  <a
-    style={{ border: "1px solid black" }}
-    href="/connexion"
-  >
+const SignUp = () => (
+  <Link class="link link-transparent" href="/inscription">
+    S'inscrire
+  </Link>
+)
+
+const LoginLink = () => (
+  <Link href="/connexion">
     se connecter
-  </a>
+  </Link>
 );
 
 const LogOutButton = () => (
-  <a
-    style={{ border: "1px solid black" }}
-    href="/api/sign-out"
-  >
-    partir
-  </a>
+  <Link href="/api/sign-out">
+    se déconnecter
+  </Link>
 );
 
 export default function Layout(props: Props) {
@@ -30,20 +31,30 @@ export default function Layout(props: Props) {
   return (
     <>
       <Head>
-        <title>Fresh App</title>
+        <meta charSet="UTF-8" />
+        <link rel="stylesheet" href={asset("/styles/global.css")} />
+        <title>Fait maison</title>
+        <link rel="icon" type="image/png" href={asset("favicon.png")} />
       </Head>
 
-      <div>
-        <nav>
-          <div>
-            {isAllowed ? <LogOutButton /> : <LoginButton />}
-          </div>
-        </nav>
-
-        <div>
-          {props.children}
+      <header class="box">
+        <div class="flex-row">
+          <img src="/images/logo-medium.png" />
+          <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
         </div>
-      </div>
+        
+        {isAllowed ? <LogOutButton /> : <span><SignUp /><LoginLink /></span>}
+      </header>
+
+      <section>
+        <article>
+          {props.children}
+        </article>
+      </section>
+
+      {/* <footer class="box">
+        mon footer
+      </footer> */}
     </>
   );
 }

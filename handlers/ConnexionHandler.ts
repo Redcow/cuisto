@@ -25,7 +25,7 @@ export async function POST(
   const headers = new Headers();
   headers.set("location", "/");
 
-  console.log(session)
+  // console.log(session) todo handle for refresh
 
   setCookie(headers, {
     name: "auth",
