@@ -12,7 +12,7 @@ const SignUp = () => (
   <Link class="link link-transparent" href="/inscription">
     S'inscrire
   </Link>
-)
+);
 
 const LoginLink = () => (
   <Link href="/connexion">
@@ -36,25 +36,44 @@ export default function Layout(props: Props) {
         <title>Fait maison</title>
         <link rel="icon" type="image/png" href={asset("favicon.png")} />
       </Head>
+      <section id="bg">
+        <div id="foreground">
+          <header class="box">
+            <div class="flex-row">
+              <img src="/images/logo-medium.png" />
+              <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
+            </div>
 
-      <header class="box">
-        <div class="flex-row">
-          <img src="/images/logo-medium.png" />
-          <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
+            {isAllowed ? <LogOutButton /> : (
+              <span>
+                <SignUp />
+                <LoginLink />
+              </span>
+            )}
+          </header>
+
+          <article>
+            {props.children}
+          </article>
         </div>
-        
-        {isAllowed ? <LogOutButton /> : <span><SignUp /><LoginLink /></span>}
-      </header>
 
-      <section>
-        <article>
-          {props.children}
-        </article>
+        <ul id="shape">
+          <li>🥒</li>
+          <li>🍕</li>
+          <li>🍔</li>
+          <li>🍙</li>
+          <li>🌮</li>
+          <li>🥗</li>
+          <li>🍌</li>
+          <li>🍽️</li>
+        </ul>
       </section>
 
-      {/* <footer class="box">
+      {
+        /* <footer class="box">
         mon footer
-      </footer> */}
+      </footer> */
+      }
     </>
   );
 }
