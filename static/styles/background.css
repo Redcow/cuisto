@@ -1,5 +1,5 @@
 section#bg {
-    background-color: #1abc9c;
+    background-color: #92c4a7;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -14,6 +14,7 @@ div#foreground {
     bottom: 0;
    /*  overflow: hidden; */
     z-index: 2;
+    padding: var(--small-space);
 }
 
 ul#shape {

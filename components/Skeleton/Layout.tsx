@@ -26,8 +26,45 @@ const LogOutButton = () => (
   </Link>
 );
 
-export default function Layout(props: Props) {
+const Container = (props: Props) => {
   const isAllowed = !!props.state?.user;
+  return (
+    <section id="bg">
+      <div id="foreground">
+        <header class="box">
+          <div class="flex-row">
+            <img id="logo" src="/images/logo-medium.png" />
+            <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
+          </div>
+
+          {isAllowed ? <LogOutButton /> : (
+            <span>
+              <SignUp />
+              <LoginLink />
+            </span>
+          )}
+        </header>
+
+        <article>
+          {props.children}
+        </article>
+      </div>
+
+      <ul id="shape">
+        <li>🥒</li>
+        <li>🍕</li>
+        <li>🍔</li>
+        <li>🍙</li>
+        <li>🌮</li>
+        <li>🥗</li>
+        <li>🍌</li>
+        <li>🍽️</li>
+      </ul>
+    </section>
+  );
+};
+
+export default function Layout(props: Props) {
   return (
     <>
       <Head>
@@ -36,38 +73,8 @@ export default function Layout(props: Props) {
         <title>Fait maison</title>
         <link rel="icon" type="image/png" href={asset("favicon.png")} />
       </Head>
-      <section id="bg">
-        <div id="foreground">
-          <header class="box">
-            <div class="flex-row">
-              <img src="/images/logo-medium.png" />
-              <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
-            </div>
 
-            {isAllowed ? <LogOutButton /> : (
-              <span>
-                <SignUp />
-                <LoginLink />
-              </span>
-            )}
-          </header>
-
-          <article>
-            {props.children}
-          </article>
-        </div>
-
-        <ul id="shape">
-          <li>🥒</li>
-          <li>🍕</li>
-          <li>🍔</li>
-          <li>🍙</li>
-          <li>🌮</li>
-          <li>🥗</li>
-          <li>🍌</li>
-          <li>🍽️</li>
-        </ul>
-      </section>
+      <Container {...props} />
 
       {
         /* <footer class="box">

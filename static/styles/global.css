@@ -24,7 +24,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: var(--small-space);
 }
 
 .w-small {
