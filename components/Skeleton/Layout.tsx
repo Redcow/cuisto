@@ -1,12 +1,18 @@
 import { asset, Head } from "$fresh/runtime.ts";
-import { type ComponentChildren } from "preact";
+import { type ComponentChildren, type ComponentProps } from "preact";
 import { type ServerState } from "infrastructure/Types.d.ts";
-import { Link } from "../Link.tsx";
+import { Link } from "components/Link.tsx";
 
 type Props = {
   children: ComponentChildren;
   state: ServerState;
 };
+
+const HomeLink = (props: ComponentProps<any>) => (
+  <Link class="link link-transparent" href="/">
+    {props.children}
+  </Link>
+);
 
 const SignUp = () => (
   <Link class="link link-transparent" href="/inscription">
@@ -32,10 +38,14 @@ const Container = (props: Props) => {
     <section id="bg">
       <div id="foreground">
         <header class="box">
-          <div class="flex-row">
-            <img id="logo" src="/images/logo-medium.png" />
-            <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
-          </div>
+          
+            <HomeLink>
+            <div class="flex-row">
+              <img id="logo" src="/images/logo-medium.png" />
+              <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
+              </div>
+            </HomeLink>
+          
 
           {isAllowed ? <LogOutButton /> : (
             <span>

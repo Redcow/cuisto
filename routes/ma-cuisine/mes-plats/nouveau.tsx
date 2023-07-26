@@ -28,6 +28,10 @@ export default function NewTakeAway(props: PageProps<ServerState>)
           <input name="photo" type="file" required />
         </LabelledInput>
 
+        <LabelledInput text="Combien ça coûte ?">
+          <input name="price" type="number" required />
+        </LabelledInput>
+
         <button type="submit"> Ajouter à ma carte</button>
       </form>
     </Layout>
