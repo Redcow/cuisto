@@ -46,3 +46,12 @@
 .card-body {
     padding: var(--small-space) var(--small-space);
 }
+
+.tile {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    border: solid black 1px;
+    display: inline-block;
+}

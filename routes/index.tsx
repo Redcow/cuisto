@@ -3,6 +3,7 @@ import { useSignal } from "@preact/signals";
 import Layout from "components/Skeleton/Layout.tsx";
 import { type PageProps } from "$fresh/server.ts";
 import { type ServerState } from "infrastructure/Types.d.ts";
+import Card from "components/container/Card.tsx";
 
 export const handler: Handlers = {
   GET(_request, context) {
@@ -15,24 +16,20 @@ export default function Home(props: PageProps<ServerState>) {
   return (
     <Layout state={props.data}>
       <div class="p-4 mx-auto max-w-screen-md">
-        <div class="card-white">
+        <Card>
           <div class="flex-row">
-            
+            <img src="/images/noodles.png" />
             <h2>
-              <img src="/images/noodles.png" />
               Trouvez un plat près de chez vous garanti fait maison!
             </h2>
-            <h2>
-
-            </h2>
           </div>
+        </Card>
 
-          {
-            /* <a class="btn btn-primary" href="/ma-cuisine">
+        {
+          /* <a class="btn btn-primary" href="/ma-cuisine">
             Ma cuisine
           </a> */
-          }
-        </div>
+        }
       </div>
     </Layout>
   );

@@ -16,21 +16,24 @@ export default function NewTakeAway(props: PageProps<ServerState>)
   return (
     <Layout state={props.data}>
       <form>
-        <LabelledInput text="Nomme ton plat">
+        <LabelledInput text="Nom de ton plat">
           <input name="name" required />
         </LabelledInput>
 
-        <LabelledInput text="Comment as-tu trouvé la recette ?">
+        <LabelledInput text="Quelques mots pour donner envie ?">
           <input name="description" required />
         </LabelledInput>
         
-        <LabelledInput text="Tu nous montres ?">
+        <LabelledInput text="Une photo ?">
           <input name="photo" type="file" required />
         </LabelledInput>
 
-        <LabelledInput text="Combien ça coûte ?">
-          <input name="price" type="number" required />
-        </LabelledInput>
+        <LabelledInput 
+          text="Combien ça coûte ?"
+          name="price"
+          type="number"
+          required
+        />
 
         <button type="submit"> Ajouter à ma carte</button>
       </form>

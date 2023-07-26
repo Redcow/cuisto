@@ -2,6 +2,7 @@ import { asset, Head } from "$fresh/runtime.ts";
 import { type ComponentChildren, type ComponentProps } from "preact";
 import { type ServerState } from "infrastructure/Types.d.ts";
 import { Link } from "components/Link.tsx";
+import { giveHomeUrlFor } from "infrastructure/security.ts";
 
 type Props = {
   children: ComponentChildren;
@@ -9,7 +10,7 @@ type Props = {
 };
 
 const HomeLink = (props: ComponentProps<any>) => (
-  <Link class="link link-transparent" href="/">
+  <Link class="link link-transparent" href={giveHomeUrlFor(props.user)}>
     {props.children}
   </Link>
 );
@@ -38,14 +39,12 @@ const Container = (props: Props) => {
     <section id="bg">
       <div id="foreground">
         <header class="box">
-          
-            <HomeLink>
+          <HomeLink user={props.state?.user}>
             <div class="flex-row">
               <img id="logo" src="/images/logo-medium.png" />
               <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
-              </div>
-            </HomeLink>
-          
+            </div>
+          </HomeLink>
 
           {isAllowed ? <LogOutButton /> : (
             <span>

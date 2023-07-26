@@ -1,6 +1,7 @@
 import { HandlerContext } from "$fresh/server.ts";
 import { setCookie } from "$std/http/cookie.ts";
 import { supabase } from "infrastructure/supabase.ts";
+import { giveHomeUrlFor } from "../infrastructure/security.ts";
 
 export async function POST(
   request: Request,
@@ -23,7 +24,7 @@ export async function POST(
   }
 
   const headers = new Headers();
-  headers.set("location", "/");
+  headers.set("location", giveHomeUrlFor(user));
 
   // console.log(session) todo handle for refresh
 

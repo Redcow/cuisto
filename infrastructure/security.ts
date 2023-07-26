@@ -13,6 +13,12 @@ export function controlAccess(token?: string) {
   verifyJWT(token);
 }
 
+export function giveHomeUrlFor(user: any) {
+  if (!user) return "/";
+  console.log("user", user);
+  return "/ma-cuisine";
+}
+
 function verifyJWT(token: string) {
   try {
     const user = jwt.verify(
