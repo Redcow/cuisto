@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700);
+
+@import url('/styles/colors.css');
+@import url('/styles/spaces.css');
+@import url('/styles/fonts.css');
+
+@import url('/styles/background.css');
+
+@import url('/styles/header.css');
+
+@import url('/styles/container.css');
+
+@import url('/styles/form.css');
+@import url('/styles/button.css');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /*background-image: url("/table.jpg");*/
+    background-color: #423f3f;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.w-small {
+    width: 25vw;
+    min-width: 300px;
+}
+
+.w-medium {
+    width: 50vw;
+    min-width: 500px;
+}
+
+.w-tall {
+    width: 80vw;
+    min-width: 6500px;
+}
+
+.center {
+    margin: auto;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}

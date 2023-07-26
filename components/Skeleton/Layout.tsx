@@ -1,49 +1,96 @@
-import { Head } from "$fresh/runtime.ts";
-import { ComponentChildren } from "preact";
-import { ServerState } from "infrastructure/Types.d.ts";
+import { asset, Head } from "$fresh/runtime.ts";
+import { type ComponentChildren, type ComponentProps } from "preact";
+import { type ServerState } from "infrastructure/Types.d.ts";
+import { Link } from "components/Link.tsx";
 
 type Props = {
   children: ComponentChildren;
   state: ServerState;
 };
 
-const LoginButton = () => (
-  <a
-    style={{ border: "1px solid black" }}
-    href="/connexion"
-  >
+const HomeLink = (props: ComponentProps<any>) => (
+  <Link class="link link-transparent" href="/">
+    {props.children}
+  </Link>
+);
+
+const SignUp = () => (
+  <Link class="link link-transparent" href="/inscription">
+    S'inscrire
+  </Link>
+);
+
+const LoginLink = () => (
+  <Link href="/connexion">
     se connecter
-  </a>
+  </Link>
 );
 
 const LogOutButton = () => (
-  <a
-    style={{ border: "1px solid black" }}
-    href="/api/sign-out"
-  >
-    partir
-  </a>
+  <Link href="/api/sign-out">
+    se déconnecter
+  </Link>
 );
 
-export default function Layout(props: Props) {
+const Container = (props: Props) => {
   const isAllowed = !!props.state?.user;
+  return (
+    <section id="bg">
+      <div id="foreground">
+        <header class="box">
+          
+            <HomeLink>
+            <div class="flex-row">
+              <img id="logo" src="/images/logo-medium.png" />
+              <h1 style={{ textTransform: "uppercase" }}>fait maison</h1>
+              </div>
+            </HomeLink>
+          
+
+          {isAllowed ? <LogOutButton /> : (
+            <span>
+              <SignUp />
+              <LoginLink />
+            </span>
+          )}
+        </header>
+
+        <article>
+          {props.children}
+        </article>
+      </div>
+
+      <ul id="shape">
+        <li>🥒</li>
+        <li>🍕</li>
+        <li>🍔</li>
+        <li>🍙</li>
+        <li>🌮</li>
+        <li>🥗</li>
+        <li>🍌</li>
+        <li>🍽️</li>
+      </ul>
+    </section>
+  );
+};
+
+export default function Layout(props: Props) {
   return (
     <>
       <Head>
-        <title>Fresh App</title>
+        <meta charSet="UTF-8" />
+        <link rel="stylesheet" href={asset("/styles/global.css")} />
+        <title>Fait maison</title>
+        <link rel="icon" type="image/png" href={asset("favicon.png")} />
       </Head>
 
-      <div>
-        <nav>
-          <div>
-            {isAllowed ? <LogOutButton /> : <LoginButton />}
-          </div>
-        </nav>
+      <Container {...props} />
 
-        <div>
-          {props.children}
-        </div>
-      </div>
+      {
+        /* <footer class="box">
+        mon footer
+      </footer> */
+      }
     </>
   );
 }

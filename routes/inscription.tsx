@@ -1,36 +1,23 @@
 
-import { Handlers } from "$fresh/server.ts";
-import { supabase } from "infrastructure/supabase.ts";
+import { type Handlers, PageProps } from "$fresh/server.ts";
+import InscriptionHandler from "handlers/InscriptionHandler.ts";
+import Layout from "components/Skeleton/Layout.tsx";
+import { type ServerState } from "infrastructure/Types.d.ts";
 
-export const handler: Handlers = 
-{
-    async POST(request, context) {
-        const url = new URL(request.url);
-        const form = await request.formData();
-    
-        const email = String(form.get("email"));
-        const password = String(form.get("password"));
-
-        const { data: { user, session }, error } = await supabase.auth.signUp({
-          email: email,
-          password: password,
-        });
-    
-        if(error) {
-          return context.render({failed: true});
-        }
-
-        const headers = new Headers();
-        headers.set("location", "/");
-        return new Response(null, { status: 303, headers });
-      },
+export const handler: Handlers = {
+  POST: InscriptionHandler.POST,
 };
 
-export default function LoginPage() {
+export default function LoginPage(props: PageProps<ServerState>) {
   return (
-    <div>
-      <h3>INSCRIPTION</h3>
-      <form
+    <Layout state={props.data}>
+      <div class="card-white w-small center">
+        <div class="card-header">
+          <h3>INSCRIPTION</h3>
+        </div>
+
+        <div class="card-body">
+        <form
         style={{ display: "flex", flexDirection: "column" }}
         method="post"
       >
@@ -59,6 +46,10 @@ export default function LoginPage() {
           GO
         </button>
       </form>
+          </div>
+
+      
     </div>
+    </Layout>
   );
 }

@@ -1,0 +1,5 @@
+footer {
+    padding: var(--small-space-fix);
+    justify-content: space-between !important;
+    margin-top: var(--small-space);
+}

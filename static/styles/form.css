@@ -1,0 +1,18 @@
+form input {
+    margin-bottom: var(--small-space-fix);
+    border: 1px solid var(--grey-border);
+    background-color: #fff;
+    display: block;
+    border-radius: 4px;
+    padding: var(--tiny-space-fix) var(--tiny-space-fix);
+    appearance: none;
+   /*  color: var(--light-chocolate-font); */
+}
+
+form label {
+    margin-bottom: var(--tiny-space-fix);
+    font-size: var(--label-size);
+    font-family: var(--font-family);
+    font-weight: 400;
+    color: var(--chocolate-font);
+}

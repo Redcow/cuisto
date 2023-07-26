@@ -1,9 +1,7 @@
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import { SecurityError } from "exceptions/SecurityError.ts";
 
-export function controlAccess(path: string, token?: string) {
-  const protected_route = path === "/secret";
-  if (!protected_route) return;
+export function controlAccess(token?: string) {
 
   if (!token) {
     throw new SecurityError({
@@ -23,7 +21,7 @@ function verifyJWT(token: string) {
     ) as JwtPayload;
     // user.id = user.sub;
     // timestampExp = user.exp;
-    console.log(user);
+    //console.log(user);
   } catch {
     throw new SecurityError({
       name: "INVALID_TOKEN",
