@@ -23,7 +23,7 @@ export default function LoginPage(props: PageProps<ServerState>) {
 
         <CardBody>
           <form
-            style={{ display: "flex", flexDirection: "column" }}
+            /* style={{ display: "flex", flexDirection: "column" }} */
             method="post"
           >
             <FormField
@@ -46,17 +46,11 @@ export default function LoginPage(props: PageProps<ServerState>) {
               //minlength="8"
             />
 
-            <button type="submit" class="link link-primary">
+            <Button>
               se connecter
-            </button>
+            </Button>
           </form>
         </CardBody>
-
-        <CardFooter>
-          <Button>
-            se connecter
-          </Button>
-        </CardFooter>
       </Card>
     </Layout>
   );

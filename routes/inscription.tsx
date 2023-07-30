@@ -1,5 +1,4 @@
 import { type Handlers, PageProps } from "$fresh/server.ts";
-import InscriptionHandler from "handlers/InscriptionHandler.ts";
 import Layout from "components/Skeleton/Layout.tsx";
 import { type ServerState } from "infrastructure/Types.d.ts";
 import { FormField } from "components/input/FormField.tsx";
@@ -8,10 +7,6 @@ import Card from "components/container/Card.tsx";
 import CardHeader from "components/container/CardHeader.tsx";
 import CardBody from "components/container/CardBody.tsx";
 import CardFooter from "components/container/CardFooter.tsx";
-
-/* export const handler: Handlers = {
-  POST: InscriptionHandler.POST,
-}; */
 
 export default function LoginPage(props: PageProps<ServerState>) {
   return (

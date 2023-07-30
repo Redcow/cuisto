@@ -21,11 +21,11 @@ export const handler: Handlers = {
     const photo = form.get("photo") as Blob;
     const price = +form.get("price");
 
-    console.log('photo', photo)
+    console.log("photo", photo);
 
     if (photo) {
       try {
-        console.log(typeof photo)
+        console.log(typeof photo);
         const reader = photo.stream().getReader();
         //const reader = request.body.stream().getReader();
         const result = await reader.read();
@@ -53,9 +53,11 @@ export default function NewTakeAway(props: PageProps<ServerState>) {
           <h3>Ton nouveau plat</h3>
         </CardHeader>
         <CardBody>
-          <form 
-            id="new-plat" 
+          <form
+            id="new-plat"
+            class="w-small center"
             method="post"
+            action="/api/kitchen/meals"
             encType="multipart/form-data"
           >
             <FormField
@@ -84,16 +86,14 @@ export default function NewTakeAway(props: PageProps<ServerState>) {
               type="number"
               required
             />
+            <Button
+              type="submit"
+              form="new-plat"
+            >
+              Ajouter à ma carte
+            </Button>
           </form>
         </CardBody>
-        <CardFooter>
-          <Button
-            type="submit"
-            form="new-plat"
-          >
-            Ajouter à ma carte
-          </Button>
-        </CardFooter>
       </Card>
     </Layout>
   );

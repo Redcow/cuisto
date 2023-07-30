@@ -4,10 +4,10 @@ import { type Handlers, type PageProps } from "$fresh/server.ts";
 import { type ServerState } from "infrastructure/Types.d.ts";
 import MesPlatsHandler from "handlers/MesPlatsHandler.ts";
 import Card from "components/container/Card.tsx";
-import CardHeader from "../../../components/container/CardHeader.tsx";
-import CardBody from "../../../components/container/CardBody.tsx";
-import { Tile } from "../../../components/container/Tile.tsx";
-import { Link } from "../../../components/Link.tsx";
+import CardHeader from "components/container/CardHeader.tsx";
+import CardBody from "components/container/CardBody.tsx";
+import { Tile } from "components/container/Tile.tsx";
+import { Link } from "components/Link.tsx";
 
 type State = {
   plats: any[]

@@ -9,17 +9,18 @@ interface Props extends JSX.HTMLAttributes<HTMLInputElement> {
 export function FormField({ text, textarea, ...attributes }: Props) {
   if (textarea) {
     return (
-      <label>
+      <div><label>
         {text}
         <textarea {...attributes}></textarea>
-      </label>
+      </label></div>
     );
   }
 
   return (
+    <div>
     <label>
       {text}
       <Input {...attributes} />
-    </label>
+    </label></div>
   );
 }

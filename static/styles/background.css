@@ -101,13 +101,14 @@ ul#shape li:nth-child(8) {
 @keyframes floating {
     from {
         transform: translateY(0) rotate(0deg);
-        opacity: 0.5;
+        opacity: 0.4;
         border-radius: 0;
     }
 
     to {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0.8;
+        /* transform: translateY(-1000px) rotate(720deg); */
+        transform: translateY(-90vh) rotate(720deg);
+        opacity: 0.9;
         border-radius: 80%;
     }
 }
