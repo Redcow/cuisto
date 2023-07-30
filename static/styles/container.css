@@ -18,7 +18,8 @@
 
 .card-black:has(> .card-header),
 .card-white:has(> .card-header),
-.card-black:has(> .card-body),
+.card-white:has(> .card-body),
+.card-white:has(> .card-footer),
 .card-black:has(> .card-body) {
     padding: 0;
 }
@@ -47,9 +48,20 @@
     padding: var(--small-space) var(--small-space);
 }
 
+.card-footer {
+    background: #fff;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+}
+
+.card-footer > button {
+    width: 100%;
+}
+
 .tile {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     aspect-ratio: 1 / 1;
     border-radius: 15px;
     border: solid black 1px;

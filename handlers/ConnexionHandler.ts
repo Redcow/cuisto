@@ -1,7 +1,7 @@
-import { HandlerContext } from "$fresh/server.ts";
+import { type HandlerContext } from "$fresh/server.ts";
 import { setCookie } from "$std/http/cookie.ts";
 import { supabase } from "infrastructure/supabase.ts";
-import { giveHomeUrlFor } from "../infrastructure/security.ts";
+import { giveHomeUrlFor } from "infrastructure/security.ts";
 
 export async function POST(
   request: Request,

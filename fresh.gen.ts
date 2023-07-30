@@ -5,14 +5,15 @@
 import * as $0 from "./routes/[name].tsx";
 import * as $1 from "./routes/api/joke.ts";
 import * as $2 from "./routes/api/sign-out.ts";
-import * as $3 from "./routes/connexion.tsx";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/inscription.tsx";
-import * as $6 from "./routes/login.tsx";
-import * as $7 from "./routes/ma-cuisine/_middleware.ts";
-import * as $8 from "./routes/ma-cuisine/index.tsx";
-import * as $9 from "./routes/ma-cuisine/mes-plats/index.tsx";
-import * as $10 from "./routes/ma-cuisine/mes-plats/nouveau.tsx";
+import * as $3 from "./routes/api/signup.ts";
+import * as $4 from "./routes/connexion.tsx";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/inscription.tsx";
+import * as $7 from "./routes/login.tsx";
+import * as $8 from "./routes/ma-cuisine/_middleware.ts";
+import * as $9 from "./routes/ma-cuisine/index.tsx";
+import * as $10 from "./routes/ma-cuisine/mes-plats/index.tsx";
+import * as $11 from "./routes/ma-cuisine/mes-plats/nouveau.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 
 const manifest = {
@@ -20,14 +21,15 @@ const manifest = {
     "./routes/[name].tsx": $0,
     "./routes/api/joke.ts": $1,
     "./routes/api/sign-out.ts": $2,
-    "./routes/connexion.tsx": $3,
-    "./routes/index.tsx": $4,
-    "./routes/inscription.tsx": $5,
-    "./routes/login.tsx": $6,
-    "./routes/ma-cuisine/_middleware.ts": $7,
-    "./routes/ma-cuisine/index.tsx": $8,
-    "./routes/ma-cuisine/mes-plats/index.tsx": $9,
-    "./routes/ma-cuisine/mes-plats/nouveau.tsx": $10,
+    "./routes/api/signup.ts": $3,
+    "./routes/connexion.tsx": $4,
+    "./routes/index.tsx": $5,
+    "./routes/inscription.tsx": $6,
+    "./routes/login.tsx": $7,
+    "./routes/ma-cuisine/_middleware.ts": $8,
+    "./routes/ma-cuisine/index.tsx": $9,
+    "./routes/ma-cuisine/mes-plats/index.tsx": $10,
+    "./routes/ma-cuisine/mes-plats/nouveau.tsx": $11,
   },
   islands: {
     "./islands/Counter.tsx": $$0,

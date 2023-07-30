@@ -1,4 +1,5 @@
-form input {
+form input,
+form textarea {
     margin-bottom: var(--small-space-fix);
     border: 1px solid var(--grey-border);
     background-color: #fff;

@@ -13,8 +13,8 @@
 }
 
 .link.link-primary {
-    background-color: #2ea44f;
-    border-color: #2ea44f;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
 
     color: #fff;
 }
@@ -24,4 +24,13 @@
     border: none;
     box-shadow: none;
     color: var(--link-color);
+}
+
+.btn {
+    padding: 8px 20px;
+}
+
+.btn.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
 }
