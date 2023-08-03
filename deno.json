@@ -18,6 +18,7 @@
     "supabase": "https://esm.sh/@supabase/supabase-js@2.1.0",
     "jsonwebtoken": "https://esm.sh/jsonwebtoken@9.0.1",
 
+    "domain/": "./domain/",
     "components/": "./components/",
     "exceptions/": "./exceptions/",
     "islands/": "./islands/",

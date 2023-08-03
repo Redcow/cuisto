@@ -1,4 +1,4 @@
-import { AppError } from "./AppError.ts";
+import { AppError } from "exceptions/AppError.ts";
 
 type ErrorName = 
     | 'TOKEN_EXPIRED'
